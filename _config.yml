@@ -4,7 +4,7 @@ tagline: "Associate Software Developer | Full-Stack & Telephony Engineer"
 email: "vishwaschourasiya@gmail.com"
 description: "Personal portfolio and technical case studies of Vishwas Chourasiya. Software engineer specializing in Python, Django, Node.js, Asterisk IVR, C, and real-time distributed systems."
 url: "https://vishwas2628.github.io"
-baseurl: "/portfolio-vishwas"
+baseurl: "/vishwas_portfolio"
 
 author:
   name: "Vishwas Chourasiya"
