@@ -5,6 +5,7 @@ email: "vishwaschourasiya@gmail.com"
 description: "Personal portfolio and technical case studies of Vishwas Chourasiya. Software engineer specializing in Python, Django, Node.js, Asterisk IVR, C, and real-time distributed systems."
 url: "https://vishwas2628.github.io"
 baseurl: "/vishwas_portfolio"
+image: "/assets/images/social-card.png"
 
 author:
   name: "Vishwas Chourasiya"
