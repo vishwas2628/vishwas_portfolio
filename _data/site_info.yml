@@ -1,0 +1,23 @@
+stats:
+  - label: "GitHub Repositories"
+    value: "35+"
+  - label: "Key Tech Stacks"
+    value: "6+"
+  - label: "Competition Rank"
+    value: "Rank 7"
+  - label: "Years Coding"
+    value: "3+"
+
+focus_areas:
+  - title: "Telephony & Real-Time Voice"
+    desc: "Designing custom Asterisk PBX dialplans, IVR navigation trees, WebRTC/SIP integrations, and low-latency voice telemetry."
+    icon: "phone"
+  - title: "Robust Backend Systems"
+    desc: "Architecting scalable microservices and monolithic APIs using Python (Django) and Node.js (Express) with strict SQL query optimization."
+    icon: "server"
+  - title: "Systems & Algorithmic Code"
+    desc: "Building CLI tools, custom protocol parsers in C, and algorithmic logic solvers for complex computational workflows."
+    icon: "terminal"
+  - title: "Data Engineering & ML"
+    desc: "Executing exploratory data analysis, feature engineering, and predictive pipelines with Pandas, NumPy, and Scikit-Learn."
+    icon: "chart"

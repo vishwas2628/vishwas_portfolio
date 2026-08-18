@@ -1,0 +1,70 @@
+title: "Vishwas Chourasiya"
+tagline: "Associate Software Developer | Full-Stack & Telephony Engineer"
+
+email: "vishwaschourasiya@gmail.com"
+description: "Personal portfolio and technical case studies of Vishwas Chourasiya. Software engineer specializing in Python, Django, Node.js, Asterisk IVR, C, and real-time distributed systems."
+url: "https://vishwas2628.github.io"
+baseurl: ""
+
+author:
+  name: "Vishwas Chourasiya"
+  initials: "VC"
+  role: "Associate Software Developer"
+  short_title: "Software Engineer"
+  title: "Associate Software Developer | Full-Stack & Telephony Engineer"
+  avatar: "/assets/images/avatar.svg"
+  email: "vishwaschourasiya@gmail.com"
+  github: "vishwas2628"
+  linkedin: "vishwaschourasiya37"
+  reddit: "Odd_Neck5739"
+  location: "India"
+  bio: "Passionate software developer dedicated to crafting scalable web applications, real-time telephony/IVR solutions, and integrating AI into robust backend architectures."
+
+# Markdown & Syntax Highlighting
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+
+permalink: /blog/:year/:month/:day/:title/
+
+# Custom Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+# Front Matter Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - vendor
+  - .bundle
+  - Gemfile.lock
+  - node_modules
+  - .env
+  - .idea
+  - README.md

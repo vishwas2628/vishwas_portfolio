@@ -1,0 +1,50 @@
+---
+layout: default
+---
+<article class="post-detail-container">
+  {% include breadcrumb.html parent_name="Blog" parent_url="/blog/" current_name=page.title %}
+
+  <header class="post-detail-header">
+    <div class="post-detail-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+      <span class="bullet">•</span>
+      <span>{{ page.read_time | default: "5 min read" }}</span>
+      {% if page.categories.size > 0 %}
+        <span class="bullet">•</span>
+        <span class="post-category">{{ page.categories | join: ", " }}</span>
+      {% endif %}
+    </div>
+
+    <h1 class="post-detail-title">{{ page.title }}</h1>
+    
+    {% if page.excerpt %}
+      <p class="post-detail-excerpt">{{ page.excerpt }}</p>
+    {% endif %}
+
+    <div class="author-bar">
+      <div class="author-avatar-badge">{{ site.author.initials }}</div>
+      <div class="author-info">
+        <span class="author-name">{{ site.author.name }}</span>
+        <span class="author-role">{{ site.author.role }}</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="post-detail-body markdown-body">
+    {{ content }}
+  </div>
+
+  <footer class="post-detail-footer">
+    <div class="post-tags-list">
+      <span class="tags-label">Tags:</span>
+      {% for tag in page.tags %}
+        <span class="tag-pill">#{{ tag }}</span>
+      {% endfor %}
+    </div>
+
+    <div class="post-footer-actions">
+      <a href="{{ '/blog/' | relative_url }}" class="btn btn-secondary">← Back to Blog</a>
+      <a href="https://github.com/vishwas2628" target="_blank" rel="noopener" class="btn btn-ghost">GitHub @vishwas2628</a>
+    </div>
+  </footer>
+</article>

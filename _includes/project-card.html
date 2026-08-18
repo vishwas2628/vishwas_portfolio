@@ -1,0 +1,36 @@
+<article class="project-card" data-category="{{ include.project.category | slugify }}">
+  <div class="project-card-header">
+    <div class="project-category-badge">{{ include.project.category }}</div>
+    <div class="project-links">
+      {% if include.project.github and include.project.github != '' %}
+        <a href="{{ include.project.github }}" target="_blank" rel="noopener noreferrer" class="icon-btn" title="View Source on GitHub" aria-label="GitHub Source">
+          {% include social-icons.html name='github' %}
+        </a>
+      {% endif %}
+      {% if include.project.demo and include.project.demo != '' %}
+        <a href="{{ include.project.demo }}" target="_blank" rel="noopener noreferrer" class="icon-btn" title="View Live Demo" aria-label="Live Demo">
+          {% include social-icons.html name='external' %}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <h3 class="project-title">
+    <a href="{{ include.project.url | relative_url }}">{{ include.project.title }}</a>
+  </h3>
+
+  <p class="project-summary">{{ include.project.summary }}</p>
+
+  <div class="project-tech-stack">
+    {% for tech in include.project.tech_stack %}
+      <span class="tech-pill">{{ tech }}</span>
+    {% endfor %}
+  </div>
+
+  <div class="project-card-footer">
+    <a href="{{ include.project.url | relative_url }}" class="read-more-link">
+      <span>Read Case Study</span>
+      <span class="arrow">→</span>
+    </a>
+  </div>
+</article>

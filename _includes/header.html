@@ -1,0 +1,33 @@
+<header class="site-header">
+  <div class="header-container">
+    <a class="site-brand" href="{{ '/' | relative_url }}">
+      <span class="brand-badge">{{ site.author.initials }}</span>
+      <div class="brand-text">
+        <span class="brand-name">{{ site.author.name }}</span>
+        <span class="brand-title">{{ site.author.short_title }}</span>
+      </div>
+    </a>
+
+    <nav class="site-nav" id="site-nav">
+      {% include navigation.html 
+         items=site.data.navigation.header 
+         list_class="nav-list" 
+         item_class="nav-item" 
+         link_class="nav-link" 
+         highlight_active=true %}
+    </nav>
+
+    <div class="header-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light theme">
+        <span class="theme-icon sun-icon">☀️</span>
+        <span class="theme-icon moon-icon">🌙</span>
+      </button>
+
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>

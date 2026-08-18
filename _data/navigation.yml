@@ -1,4 +1,19 @@
-- name: Home
-  link: /
-- name: About
-  link: /about.html
+# Shared navigation links across header and footer to maintain DRY principles.
+links: &shared_links
+  - name: Home
+    link: /
+  - name: About
+    link: /about/
+  - name: Projects
+    link: /projects/
+  - name: Experience
+    link: /experience/
+  - name: Blog
+    link: /blog/
+  - name: Resume
+    link: /resume/
+  - name: Contact
+    link: /contact/
+
+header: *shared_links
+footer: *shared_links

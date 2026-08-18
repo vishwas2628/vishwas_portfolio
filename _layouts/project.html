@@ -1,0 +1,62 @@
+---
+layout: default
+---
+<article class="project-detail-container">
+  {% include breadcrumb.html parent_name="Projects" parent_url="/projects/" current_name=page.title %}
+
+  <header class="project-detail-header">
+    <div class="project-detail-category">{{ page.category }}</div>
+    <h1 class="project-detail-title">{{ page.title }}</h1>
+    <p class="project-detail-summary">{{ page.summary }}</p>
+
+    <div class="project-detail-meta-bar">
+      <div class="meta-item">
+        <span class="meta-label">Status</span>
+        <span class="meta-val status-badge">{{ page.status | default: "Completed" }}</span>
+      </div>
+      {% if page.date %}
+      <div class="meta-item">
+        <span class="meta-label">Date</span>
+        <span class="meta-val">{{ page.date | date: "%B %Y" }}</span>
+      </div>
+      {% endif %}
+      <div class="meta-item links-item">
+        <span class="meta-label">Links</span>
+        <div class="meta-val project-actions">
+          {% if page.github and page.github != '' %}
+            <a href="{{ page.github }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary">
+              {% include social-icons.html name='github' %}
+              <span>GitHub Repo</span>
+            </a>
+          {% endif %}
+          {% if page.demo and page.demo != '' %}
+            <a href="{{ page.demo }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+              {% include social-icons.html name='external' %}
+              <span>Live Demo</span>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="project-detail-tech">
+      <span class="tech-stack-label">Technologies:</span>
+      <div class="tech-pills-list">
+        {% for tech in page.tech_stack %}
+          <span class="tech-pill">{{ tech }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  </header>
+
+  <div class="project-detail-body markdown-body">
+    {{ content }}
+  </div>
+
+  <footer class="project-detail-footer">
+    <div class="project-footer-nav">
+      <a href="{{ '/projects/' | relative_url }}" class="btn btn-secondary">← Back to All Projects</a>
+      <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary">Discuss this Project</a>
+    </div>
+  </footer>
+</article>

@@ -1,0 +1,259 @@
+---
+layout: default
+---
+<section class="hero-section">
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="status-dot"></span> Available for Software Engineering Roles & Collaboration
+      </div>
+      <h1 class="hero-title">
+        Hi, I'm <span class="highlight-text">{{ site.author.name }}</span>
+      </h1>
+      <p class="hero-subtitle">
+        Associate Software Developer & Full-Stack Engineer specializing in <span class="strong-accent">Python / Django</span>, <span class="strong-accent">Node.js</span>, <span class="strong-accent">Asterisk IVR Telephony</span>, and low-level systems.
+      </p>
+      <p class="hero-bio">
+        Dedicated to crafting efficient, resilient web architectures, real-time voice response trees, and elegant algorithmic solutions.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="{{ '/projects/' | relative_url }}" class="btn btn-primary">
+          <span>Explore Projects</span>
+          <span class="btn-icon">→</span>
+        </a>
+        <a href="{{ '/contact/' | relative_url }}" class="btn btn-secondary">Get in Touch</a>
+        <a href="{{ '/resume/' | relative_url }}" class="btn btn-ghost">View Resume</a>
+      </div>
+
+      <div class="hero-socials">
+        <span class="socials-label">Connect:</span>
+        <div class="social-links-row">
+          {% for social in site.data.socials %}
+            <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer" class="social-icon-badge" title="{{ social.name }}">
+              {% include social-icons.html name=social.icon %}
+              <span>{{ social.name }}</span>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="terminal-card">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="terminal-title">vishwas@dev-box:~</div>
+        </div>
+        <div class="terminal-body">
+          <p><span class="prompt">$</span> <span class="cmd">whoami</span></p>
+          <p class="response">{{ site.author.name }} &lt;{{ site.author.short_title }}&gt;</p>
+          
+          <p><span class="prompt">$</span> <span class="cmd">cat specialties.json</span></p>
+          <pre class="terminal-json">{
+  <span class="json-key">"telephony"</span>: <span class="json-val">"Asterisk PBX / FastAGI / IVR"</span>,
+  <span class="json-key">"backend"</span>: <span class="json-val">["Python", "Django", "Node.js", "Express"]</span>,
+  <span class="json-key">"frontend"</span>: <span class="json-val">["React", "JavaScript ES6+", "Tailwind"]</span>,
+  <span class="json-key">"systems"</span>: <span class="json-val">["C", "POSIX Sockets", "Redis Protocol"]</span>,
+  <span class="json-key">"status"</span>: <span class="json-val">"Building scalable architectures 🚀"</span>
+}</pre>
+
+          <p><span class="prompt">$</span> <span class="cmd">git stats --summary</span></p>
+          <p class="response highlight">✓ 35+ Public Repositories | Active Contributor</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Grid -->
+<section class="stats-section">
+  <div class="section-container">
+    <div class="stats-grid">
+      {% for stat in site.data.site_info.stats %}
+        <div class="stat-card">
+          <div class="stat-value">{{ stat.value }}</div>
+          <div class="stat-label">{{ stat.label }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Core Focus Areas -->
+<section class="focus-section">
+  <div class="section-container">
+    <div class="section-header">
+      <h2 class="section-title">What I Do</h2>
+      <p class="section-subtitle">Core domains of engineering focus and technical expertise</p>
+    </div>
+
+    <div class="focus-grid">
+      {% for area in site.data.site_info.focus_areas %}
+        <div class="focus-card">
+          <div class="focus-icon-box">
+            <span class="focus-icon-symbol">✦</span>
+          </div>
+          <h3 class="focus-title">{{ area.title }}</h3>
+          <p class="focus-desc">{{ area.desc }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Featured Projects -->
+<section class="projects-section">
+  <div class="section-container">
+    <div class="section-header-flex">
+      <div>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Real-world implementations, systems, and full-stack solutions</p>
+      </div>
+      <a href="{{ '/projects/' | relative_url }}" class="view-all-link">
+        <span>View all {{ site.projects.size }} projects</span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <div class="projects-grid">
+      {% assign featured_projects = site.projects | where: "featured", true | sort: "order" %}
+      {% for project in featured_projects limit: 4 %}
+        {% include project-card.html project=project %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Technical Skills Matrix -->
+<section class="skills-section">
+  <div class="section-container">
+    <div class="section-header">
+      <h2 class="section-title">Skills & Technologies</h2>
+      <p class="section-subtitle">Technologies and tools I work with daily</p>
+    </div>
+
+    <div class="skills-category-grid">
+      {% for cat in site.data.skills %}
+        <div class="skills-category-card">
+          <h3 class="category-heading">{{ cat.category }}</h3>
+          <div class="skills-list">
+            {% for skill in cat.skills %}
+              <div class="skill-item">
+                <span class="skill-name">{{ skill.name }}</span>
+                <span class="skill-level">{{ skill.level }}</span>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Experience & Timeline Snapshot -->
+<section class="experience-section">
+  <div class="section-container">
+    <div class="section-header-flex">
+      <div>
+        <h2 class="section-title">Experience & Journey</h2>
+        <p class="section-subtitle">Career timeline and development milestones</p>
+      </div>
+      <a href="{{ '/experience/' | relative_url }}" class="view-all-link">
+        <span>Full experience details</span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <div class="timeline">
+      {% for exp in site.data.experience limit: 2 %}
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">{{ exp.role }}</h3>
+                <h4 class="timeline-company">{{ exp.company }}</h4>
+              </div>
+              <span class="timeline-period">{{ exp.period }}</span>
+            </div>
+            <p class="timeline-summary">{{ exp.summary }}</p>
+            <ul class="timeline-bullets">
+              {% for bullet in exp.highlights limit: 3 %}
+                <li>{{ bullet }}</li>
+              {% endfor %}
+            </ul>
+            <div class="timeline-tech">
+              {% for t in exp.tech %}
+                <span class="tech-pill-sm">{{ t }}</span>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Latest Articles -->
+<section class="blog-preview-section">
+  <div class="section-container">
+    <div class="section-header-flex">
+      <div>
+        <h2 class="section-title">Technical Notes & Articles</h2>
+        <p class="section-subtitle">Engineering reflections, architecture deep dives, and tutorials</p>
+      </div>
+      <a href="{{ '/blog/' | relative_url }}" class="view-all-link">
+        <span>View all articles</span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <div class="blog-grid">
+      {% for post in site.posts limit: 3 %}
+        <article class="post-card">
+          <div class="post-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+            <span class="bullet">•</span>
+            <span>{{ post.read_time | default: "5 min read" }}</span>
+          </div>
+          <h3 class="post-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</p>
+          <div class="post-card-footer">
+            <div class="post-tags">
+              {% for tag in post.tags limit: 2 %}
+                <span class="tag-pill">#{{ tag }}</span>
+              {% endfor %}
+            </div>
+            <a href="{{ post.url | relative_url }}" class="read-link">Read article →</a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Contact Callout -->
+<section class="cta-section">
+  <div class="section-container">
+    <div class="cta-card">
+      <div class="cta-content">
+        <h2>Let's build something exceptional together</h2>
+        <p>I'm open for full-time engineering roles, backend consulting, and telephony / IVR architecture projects.</p>
+        <div class="cta-actions">
+          <a href="mailto:vishwaschourasiya@gmail.com" class="btn btn-primary">
+            <span>Send me an Email</span>
+            <span>✉️</span>
+          </a>
+          <a href="https://linkedin.com/in/vishwaschourasiya37" target="_blank" rel="noopener" class="btn btn-secondary">Connect on LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

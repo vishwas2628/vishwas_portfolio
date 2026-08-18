@@ -1,0 +1,19 @@
+- name: "GitHub"
+  url: "https://github.com/vishwas2628"
+  username: "vishwas2628"
+  icon: "github"
+
+- name: "LinkedIn"
+  url: "https://linkedin.com/in/vishwaschourasiya37"
+  username: "vishwaschourasiya37"
+  icon: "linkedin"
+
+- name: "Email"
+  url: "mailto:vishwaschourasiya@gmail.com"
+  username: "vishwaschourasiya@gmail.com"
+  icon: "email"
+
+- name: "Reddit"
+  url: "https://www.reddit.com/u/Odd_Neck5739/s/J39oNq9nhK"
+  username: "Odd_Neck5739"
+  icon: "reddit"

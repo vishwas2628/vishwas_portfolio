@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#38bdf8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="95" fill="url(#grad1)" stroke="#60a5fa" stroke-width="4" />
+  <circle cx="100" cy="80" r="42" fill="#ffffff" />
+  <circle cx="100" cy="80" r="38" fill="#1e293b" />
+  <!-- Hair / Glasses -->
+  <path d="M 68 76 Q 84 62 100 62 Q 116 62 132 76 Q 126 50 100 48 Q 74 50 68 76 Z" fill="#38bdf8" />
+  <!-- Glasses -->
+  <rect x="76" y="74" width="20" height="14" rx="3" fill="none" stroke="#60a5fa" stroke-width="3" />
+  <rect x="104" y="74" width="20" height="14" rx="3" fill="none" stroke="#60a5fa" stroke-width="3" />
+  <line x1="96" y1="81" x2="104" y2="81" stroke="#60a5fa" stroke-width="3" />
+  <!-- Smile -->
+  <path d="M 88 100 Q 100 110 112 100" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+  <!-- Body / Shoulders -->
+  <path d="M 40 180 C 40 135, 70 130, 100 130 C 130 130, 160 135, 160 180 Z" fill="url(#grad2)" />
+  <!-- Monogram VC text -->
+  <text x="100" y="165" font-family="'Inter', sans-serif" font-weight="800" font-size="18" fill="#ffffff" text-anchor="middle">&lt;DEV /&gt;</text>
+</svg>

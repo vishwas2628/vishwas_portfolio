@@ -1,5 +1,14 @@
 # build output
 dist/
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ruby / Bundler dependencies
+vendor/
+vendor/bundle/
+.bundle/
 
 # generated types
 .astro/
@@ -22,3 +31,4 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+

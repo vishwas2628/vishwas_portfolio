@@ -1,0 +1,14 @@
+{% comment %}
+  Reusable breadcrumbs layout.
+  Parameters:
+    - parent_name: Name of parent page (optional, e.g. 'Blog')
+    - parent_url: Relative link of parent page (optional, e.g. '/blog/')
+    - current_name: Current page name (required)
+{% endcomment %}
+<nav class="breadcrumb">
+  <a href="{{ '/' | relative_url }}">Home</a> /
+  {% if include.parent_url and include.parent_name %}
+    <a href="{{ include.parent_url | relative_url }}">{{ include.parent_name }}</a> /
+  {% endif %}
+  <span>{{ include.current_name }}</span>
+</nav>

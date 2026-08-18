@@ -1,7 +1,28 @@
-<nav>
-  {% for item in site.data.navigation %}
-    <a href="{{ item.link }}" {% if page.url == item.link %}style="color: red;"{% endif %}>
-      {{ item.name }}
-    </a>
+{% comment %}
+  Reusable navigation menu list.
+  Parameters:
+    - items: array of navigation items (defaults to site.data.navigation.header)
+    - list_class: CSS class for the <ul> element
+    - item_class: CSS class for the <li> element (optional)
+    - link_class: CSS class for the <a> element (optional)
+    - highlight_active: boolean to add 'active' class to current page
+{% endcomment %}
+
+{% assign nav_items = include.items | default: site.data.navigation.header %}
+<ul class="{{ include.list_class }}">
+  {% for item in nav_items %}
+    <li{% if include.item_class and include.item_class != "" %} class="{{ include.item_class }}"{% endif %}>
+      {% assign is_active = false %}
+      {% if include.highlight_active %}
+        {% if page.url == item.link or page.url contains item.link and item.link != '/' %}
+          {% assign is_active = true %}
+        {% endif %}
+      {% endif %}
+      {% capture a_classes %}{% if include.link_class %}{{ include.link_class }}{% endif %}{% if is_active %} active{% endif %}{% endcapture %}
+      {% assign a_classes = a_classes | strip %}
+      <a href="{{ item.link | relative_url }}"{% if a_classes != "" %} class="{{ a_classes }}"{% endif %}>
+        {{ item.name }}
+      </a>
+    </li>
   {% endfor %}
-</nav>
+</ul>
