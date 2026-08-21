@@ -3,14 +3,45 @@ layout: default
 title: "Page Not Found (404)"
 permalink: /404.html
 ---
+
+<script>
+  (function() {
+    var rawPath = window.location.pathname;
+    var base = "{{ '' | relative_url }}";
+    // Normalize path by stripping trailing slash
+    var normPath = rawPath.replace(/\/+$/, '');
+    var baseNorm = base.replace(/\/+$/, '');
+    
+    // Check if root or home was requested
+    if (normPath === '' || normPath === '/' || normPath === '/index.html' || normPath === '/home' || 
+        normPath === baseNorm || normPath === baseNorm + '/home' || normPath === baseNorm + '/index.html') {
+      window.location.replace("{{ '/' | relative_url }}");
+    }
+  })();
+</script>
+
 <div class="error-page-container">
   <div class="error-card">
-    <div class="error-code">404</div>
-    <h1 class="error-title">Page Not Found</h1>
-    <p class="error-message">The page you are looking for does not exist, was moved, or is temporarily unavailable.</p>
-    <div class="error-actions">
-      <a href="{{ '/' | relative_url }}" class="btn btn-primary">← Return to Home</a>
-      <a href="{{ '/projects/' | relative_url }}" class="btn btn-secondary">Explore Projects</a>
+    <div class="error-illustration-wrapper">
+      <img src="{{ '/assets/images/404-illustration.svg' | relative_url }}" alt="404 Page Not Found Illustration" class="error-illustration" width="480" height="320" />
+    </div>
+    
+    <div class="error-content">
+      <span class="error-badge">Error 404 • Resource Lost</span>
+      <h1 class="error-title">Page Not Found</h1>
+      <p class="error-message">The page you are looking for does not exist, has been relocated, or is temporarily unavailable in the network tree.</p>
+      
+      <div class="error-actions">
+        <a href="{{ '/' | relative_url }}" class="btn btn-primary">
+          <span>← Return to Home</span>
+        </a>
+        <a href="{{ '/projects/' | relative_url }}" class="btn btn-secondary">
+          <span>Explore Projects</span>
+        </a>
+        <a href="{{ '/contact/' | relative_url }}" class="btn btn-ghost">
+          <span>Contact Support</span>
+        </a>
+      </div>
     </div>
   </div>
 </div>

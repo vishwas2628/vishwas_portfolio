@@ -6,6 +6,7 @@ categories: [Backend, Python]
 tags: [Python, Django, PostgreSQL, Performance]
 excerpt: "Practical techniques for keeping Django codebases modular, eliminating N+1 query bottlenecks, and building clean RESTful interfaces."
 read_time: "6 min read"
+image: "/assets/images/posts/django-architecture.svg"
 ---
 
 Django remains one of the most reliable and productive web frameworks in existence. However, as applications grow in complexity, poorly structured models, hidden N+1 queries, and monolithic views can slow down both performance and developer velocity.

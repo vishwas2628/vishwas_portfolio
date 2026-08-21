@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="defBlogGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00002a"/>
+      <stop offset="100%" stop-color="#132448"/>
+    </linearGradient>
+    <linearGradient id="defBadgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a3f75"/>
+      <stop offset="100%" stop-color="#4a749c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="700" height="380" rx="18" fill="url(#defBlogGrad)"/>
+
+  <!-- Code Pattern -->
+  <g stroke="#1a3f75" stroke-width="1" stroke-opacity="0.3">
+    <line x1="0" y1="70" x2="700" y2="70"/>
+    <line x1="0" y1="150" x2="700" y2="150"/>
+    <line x1="0" y1="230" x2="700" y2="230"/>
+    <line x1="0" y1="310" x2="700" y2="310"/>
+    <line x1="140" y1="0" x2="140" y2="380"/>
+    <line x1="350" y1="0" x2="350" y2="380"/>
+    <line x1="560" y1="0" x2="560" y2="380"/>
+  </g>
+
+  <!-- Central Technical Emblem -->
+  <g transform="translate(350, 180)">
+    <circle cx="0" cy="0" r="70" fill="#091338" stroke="#4a749c" stroke-width="2"/>
+    <circle cx="0" cy="0" r="50" fill="#132448" stroke="#60a5fa" stroke-width="1.5"/>
+    <text x="0" y="10" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="34" font-weight="900" fill="#d4e4f5">&lt;/&gt;</text>
+  </g>
+
+  <text x="350" y="290" text-anchor="middle" font-family="'Inter', sans-serif" font-size="18" font-weight="800" fill="#ffffff" letter-spacing="1">ENGINEERING &amp; ARCHITECTURE</text>
+  <text x="350" y="315" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" fill="#8ca9c4">Vishwas Chourasiya • Technical Notes</text>
+</svg>

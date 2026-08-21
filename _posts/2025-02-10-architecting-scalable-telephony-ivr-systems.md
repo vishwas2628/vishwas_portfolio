@@ -6,6 +6,7 @@ categories: [Telephony, Architecture]
 tags: [Asterisk, IVR, Node.js, WebSockets, VoIP]
 excerpt: "Key patterns for structuring high-concurrency Asterisk PBX dialplans, FastAGI listeners, and real-time WebSocket state streaming."
 read_time: "8 min read"
+image: "/assets/images/posts/telephony-ivr.svg"
 ---
 
 Interactive Voice Response (IVR) and telephony engineering require a fundamentally different mindset compared to standard web development. Unlike HTTP requests where a client can wait a few hundred milliseconds for a database query, voice streams are real-time, synchronous, and unforgiving of latency or audio jitter.
